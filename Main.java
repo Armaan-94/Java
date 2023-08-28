@@ -1,33 +1,17 @@
-package ClassesObjects;
+package DSA;
 
-class Shape {
-    public void printShape() {
-        System.out.println("This is shape");
-    }
-}
-
-class Rectangle {
-    public void printShape() {
-        System.out.println("This is rectangular shape");
-    }
-}
-
-class Circle {
-    public void printShape() {
-        System.out.println("This is circular shape");
-    }
-}
-
-class Square extends Rectangle {
-    public void printSquare() {
-        System.out.println("Square is a rectangle");
-    }
-}
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Square s = new Square();
-        s.printShape();
-        s.printSquare();
+        int[] arr = {1,2,3,4,5};
+        swap(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    static void swap(int[] arr){
+        int temp = arr[0];
+        arr[0] = arr[arr.length-1];
+        arr[arr.length-1] = temp;
     }
 }

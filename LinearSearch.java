@@ -1,20 +1,24 @@
-import java.util.Scanner;
+package DSA;
 
-public class LinearSearch {
-    public static void main(String[] args) {
-        Scanner myScan = new Scanner(System.in);
-        int arr[] = new int[7];
-        System.out.print("Enter 7 elements of array: ");
-        for (int i = 0;i< arr.length; i++){
-            arr[i]=myScan.nextInt();
+    public class LinearSearch {
+        public static void main(String[] args) {
+            int[] arr = {4,392,89,65,43,79,54};
+            int target = 65;
+            int ans = linearsearch(arr, target);
+            System.out.println(ans);
+
         }
-        System.out.println("Enter value you want to search: ");
-        int val = myScan.nextInt();
-        for (int j = 0; j<arr.length; j++ ){
-            if(arr[j]==val){
-                System.out.println("Element found at index position "+ j);
+        static int linearsearch(int[] arr, int target){
+            if(arr.length==0){
+                return -1;
             }
+            for (int i = 0; i < arr.length ; i++) {
+                int element = arr[i];
+                if(element==target){
+                    return arr[i];
+                }
+            }
+            return 0;
         }
-
     }
-}
+
